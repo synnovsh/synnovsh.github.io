@@ -1,8 +1,11 @@
 import React from "react"
 
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import styled from "styled-components"
 
+import "typeface-playfair-display"
+
+import Layout from "../components/layout"
 import RichImage from "../components/richImage"
 import BlockContent from "../components/blockContent"
 import SEO from "../components/seo"
@@ -19,10 +22,75 @@ export const query = graphql`
         }
         alt
       }
-      tags {
-        title
-        id
+      category {
+        name
       }
+      stack
+      live
+      code
+    }
+  }
+`
+
+const ProjectArticle = styled.article`
+`
+
+const ProjectInfo = styled.section`
+  display: flex;
+  flex-direction: column;
+`
+
+const BodySection = styled.section`
+  display: grid;
+  grid-template-columns: minmax(25px, auto) minmax(0, 800px) minmax(25px, auto);
+  width: 100%;
+
+  padding-top: 50px;
+  background-color: #f2f7ef;
+`
+
+const Content = styled.div`
+  grid-area: 1/2;
+  backgroud-color: #f2f7ef !important;
+
+  h1 {
+    margin-top: 1em;
+    font-family: playfair-display;
+    font-weight: 800;
+  }
+
+  p {
+    max-width: 500px;
+    margin-top: 1.5em;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  video,
+  img {
+    max-height: 80vh;
+  }
+
+  video {
+    display: inline-block;
+    text-align: center;
+  }
+
+  figure {
+    margin-top: 1.5em;
+    display: inline-flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+    figcaption {
+      padding: 30px 0 0 30px;
+      flex: 1 0 70px;
+    }
+
+    img {
+      object-fit: scale-down;
     }
   }
 `
@@ -32,19 +100,41 @@ const ProjectTemplate = ({ data }) => {
 
   const {
     title,
-    _rawDescription: description,
     _rawBody: body,
     mainImage,
-    tags,
+    category,
+    stack,
+    live,
+    code,
   } = project
-
   return (
     <Layout>
-      <SEO title={title} />
-      <ul>{tags && tags.map(t => <li key={t.id}>{t.title}</li>)}</ul>
-      <RichImage image={mainImage} />
-      <BlockContent blocks={description} />
-      <BlockContent blocks={body} />
+      
+      <ProjectArticle>
+        <ProjectInfo>
+          <div>
+            <h1>{title}</h1>
+            <RichImage image={mainImage} />
+          </div>
+          <div>
+            {category && category}
+            {stack && (
+              <ul>
+                {stack.map(s => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+            )}
+            {code && code}
+            {live && live}
+          </div>
+        </ProjectInfo>
+        <BodySection>
+          <Content>
+            <BlockContent blocks={body} />
+          </Content>
+        </BodySection>
+      </ProjectArticle>
     </Layout>
   )
 }

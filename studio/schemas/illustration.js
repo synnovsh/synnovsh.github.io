@@ -25,17 +25,13 @@ export default {
       type: 'richImage'
     },
     {
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'tag'}}]
-    },
-    {
       name: 'creationDate',
       title: 'Creation date',
       description: 'The time the illustration was created',
       type: 'date',
-      dateFormat: 'YYYY-MM',
+      options: {
+        dateFormat: 'YYYY-MM-DD'
+      }
     },
     {
       name: 'description',

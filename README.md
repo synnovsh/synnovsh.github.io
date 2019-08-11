@@ -10,7 +10,7 @@ is the GraphQL integrated development environment (IDE) found at [http://localho
 Run queries against `https://<yourProjectId>.api.sanity.io/v1/graphql/<dataset>/default`
 
 
-## Gatsby with Sanity as source
+## Sanity as source
 * [gatsby-source-sanity](https://github.com/sanity-io/gatsby-source-sanity#graphql-api)
 * [Sanity GraphQL beta docs](https://www.sanity.io/help/graphql-beta)
 

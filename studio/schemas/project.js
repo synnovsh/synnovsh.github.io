@@ -29,10 +29,30 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'tags',
-      title: 'Tags',
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [{type: 'projectCategory'}]
+    },
+    {
+      name: 'stack',
+      title: 'Stack',
+      description: 'The tech stack',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'tag'}}]
+      of: [{type: 'string'}],
+      editModal: 'popover'
+    },
+    {
+      name: 'code',
+      title: 'Code',
+      description: 'A link to the code',
+      type: 'url'
+    },
+    {
+      name: 'live',
+      title: 'Live',
+      description: 'A link to a live preview or demo',
+      type: 'url'
     },
     {
       name: 'creationDate',

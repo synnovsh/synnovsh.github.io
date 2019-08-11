@@ -16,9 +16,8 @@ export default {
   fields: [
     {
       type: "string",
-      name: "title",
-      title: "Title",
-      description: "A short title for the video for readability"
+      name: "caption",
+      title: "Caption",
     },
     {
       type: "file",
@@ -28,12 +27,12 @@ export default {
   ],
   preview: {
     select: {
-      title: "title",
+      title: "caption",
       sourceUrl: "source.asset.url",
     },
     prepare(props) {
       return {
-        title: props.title,
+        title: props.caption,
         media: <VideoPreviewComponent src={props.sourceUrl} />
       };
     }

@@ -13,11 +13,17 @@ const RichImage = ({ image }) => {
   const {
     alt,
     asset: { id },
+    caption,
   } = image
 
   const url = imageUrlFor(id)
 
-  return <img alt={alt} src={url} />
+  return (
+    <figure>
+      <img alt={alt} src={url} />
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
+  )
 }
 
 export default RichImage
