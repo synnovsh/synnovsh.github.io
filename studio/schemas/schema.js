@@ -15,6 +15,8 @@ import blockSimple from './blockSimple';
 import blockMedia from './blockMedia'
 import video from './video';
 import richImage from './richImage';
+import slideshow from './slideshow';
+
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -37,5 +39,6 @@ export default createSchema({
     blockSimple,
     richImage,
     video,
+    slideshow
   ])
 })

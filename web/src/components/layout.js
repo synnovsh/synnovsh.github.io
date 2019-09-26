@@ -13,8 +13,7 @@ import Header from "./header"
 
 const Content = styled.div`
   main {
-    img,
-    video {
+    img {
       max-width: 100%;
     }
   }

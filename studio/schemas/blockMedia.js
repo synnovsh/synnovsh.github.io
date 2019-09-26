@@ -62,6 +62,9 @@ export default {
     },
     {
       type: 'richImage',
+    },
+    {
+      type: 'slideshow',
     }
   ]
 }

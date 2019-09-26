@@ -3,8 +3,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 
-import "typeface-playfair-display"
-
 import Layout from "../components/layout"
 import RichImage from "../components/richImage"
 import BlockContent from "../components/blockContent"
@@ -51,11 +49,9 @@ const BodySection = styled.section`
 
 const Content = styled.div`
   grid-area: 1/2;
-  backgroud-color: #f2f7ef !important;
 
   h1 {
     margin-top: 1em;
-    font-family: playfair-display;
     font-weight: 800;
   }
 
@@ -70,12 +66,13 @@ const Content = styled.div`
 
   video,
   img {
+    margin-top: 1.5em;
     max-height: 80vh;
   }
 
   video {
     display: inline-block;
-    text-align: center;
+    margin: auto;
   }
 
   figure {

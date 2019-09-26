@@ -24,6 +24,18 @@ export default {
       name: "source",
       title: "Video source"
     },
+    {
+      type: 'string',
+      title: 'Orientation',
+      name: 'orientation',
+      options: {
+        list: [
+          {title: 'Vertical', value: 'vertical'},
+          {title: 'Horizontal', value: 'horizontal'}
+        ], 
+        layout: 'radio'
+      }
+    }
   ],
   preview: {
     select: {
