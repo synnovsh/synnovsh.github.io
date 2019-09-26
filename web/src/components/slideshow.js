@@ -2,29 +2,12 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 import RichImage from "./richImage"
-import arrowRight from "./arrow-right.svg"
-import arrowLeft from "./arrow-left.svg"
 
 const Slideshower = styled.div`
   position: relative;
   max-width: 100%;
   max-height: 100vh;
   overflow: hidden;
-`
-
-const Controls = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 10px 0;
-  button {
-    width: 40px;
-    height: 40px;
-  }
-
-  span {
-    margin: 0 5px;
-  }
 `
 
 const Slidelist = styled.ul`
@@ -44,39 +27,50 @@ const Slide = styled.li`
   }
 `
 
-const Button = styled.button`
+const Controls = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  z-index: 666;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  background-color: rgba(999, 999, 999, 0);
+  justify-content: space-between;
+`
+
+const Button = styled.button`
   ${props => props.disabled && "visibility: hidden;"}
   width: 50px;
   height: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 0;
+  outline: 0;
+  padding: 0;
 
-  &:focus {
-    outline: 0;
-  }
-
-  img {
-    height: 50%;
-    width: 50%;
-    padding: 0 !important;
-    margin: 5px;
+   {
+    cursor: pointer;
   }
 `
 
+const Arrow = ({ direction }) => (
+  <svg
+    height="32px"
+    id="Layer_1"
+    version="1.1"
+    viewBox="0 0 32 32"
+    width="32px"
+    transform={direction === "left" && "rotate(-180)"}
+  >
+    <path
+      d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z"
+      fill="white"
+      fillOpacity="0.4"
+    />
+  </svg>
+)
+
 const ArrowButton = ({ direction, onClick, disabled }) => {
-  const isRight = direction === "right"
-  const image = isRight ? arrowRight : arrowLeft
-  const text = isRight ? "next" : "prev"
   return (
-    <Button
-      isRight={isRight}
-      type="button"
-      onClick={() => onClick()}
-      disabled={disabled}
-    >
-      <img src={image} alt={text} />
+    <Button type="button" onClick={() => onClick()} disabled={disabled}>
+      <Arrow direction={direction} />
     </Button>
   )
 }
@@ -100,7 +94,6 @@ const Slideshow = ({ slides }) => {
           onClick={() => handlePrev()}
           disabled={index === 0}
         />
-        <span>{`${index + 1} / ${len}`}</span>
         <ArrowButton
           direction="right"
           onClick={handleNext}
