@@ -3,9 +3,11 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Blob from "../components/blob"
 
 const IndexPage = () => (
   <Layout>
+    <Blob />
     <SEO title="Home" />
     <Link to="/projects/">Projects</Link>
   </Layout>
