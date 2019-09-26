@@ -2,11 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 const AnimatedBlob = styled.div`
-  svg,
-  svg circle {
-    fill: royalblue;
-  }
-
   @keyframes from0to360 {
     from {
       transform: rotate(0);
@@ -58,7 +53,7 @@ const AnimatedBlob = styled.div`
   }
 `
 
-const Blob = () => {
+const Blob = ({ fill }) => {
   return (
     <AnimatedBlob>
       <svg
@@ -66,6 +61,7 @@ const Blob = () => {
         height="300"
         xmlns="http://www.w3.org/2000/svg"
         filter="url(#goo)"
+        fill={fill && `${fill}`}
       >
         <defs>
           <filter id="goo">
@@ -84,10 +80,10 @@ const Blob = () => {
             <feComposite in="SourceGraphic" in2="goo" operator="atop" />
           </filter>
         </defs>
-        <circle id="Circle1"></circle>
-        <circle id="Circle2"></circle>
-        <circle id="Circle3"></circle>
-        <circle id="Circle4"></circle>
+        <circle id="Circle1" />
+        <circle id="Circle2" />
+        <circle id="Circle3" />
+        <circle id="Circle4" />
       </svg>
     </AnimatedBlob>
   )
