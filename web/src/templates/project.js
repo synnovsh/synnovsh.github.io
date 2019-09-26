@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import RichImage from "../components/richImage"
 import BlockContent from "../components/blockContent"
 import SEO from "../components/seo"
 
@@ -30,12 +29,11 @@ export const query = graphql`
   }
 `
 
-const ProjectArticle = styled.article`
-`
+const ProjectArticle = styled.article``
 
 const ProjectInfo = styled.section`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `
 
 const BodySection = styled.section`
@@ -44,20 +42,29 @@ const BodySection = styled.section`
   width: 100%;
 
   padding-top: 50px;
-  background-color: #f2f7ef;
 `
 
 const Content = styled.div`
   grid-area: 1/2;
 
-  h1 {
-    margin-top: 1em;
-    font-weight: 800;
+  h1,
+  h2,
+  p {
+    margin-bottom: 1em;
+  }
+
+  video,
+  img {
+    margin: 4em 0;
+  }
+
+  h2 {
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
 
   p {
     max-width: 500px;
-    margin-top: 1.5em;
   }
 
   a {
@@ -66,23 +73,20 @@ const Content = styled.div`
 
   video,
   img {
-    margin-top: 1.5em;
     max-height: 80vh;
   }
 
   video {
     display: inline-block;
-    margin: auto;
   }
 
   figure {
-    margin-top: 1.5em;
     display: inline-flex;
     flex-flow: row wrap;
     width: 100%;
 
     figcaption {
-      padding: 30px 0 0 30px;
+      padding: 4em 0 0 1em;
       flex: 1 0 70px;
     }
 
@@ -95,23 +99,13 @@ const Content = styled.div`
 const ProjectTemplate = ({ data }) => {
   const { project } = data
 
-  const {
-    title,
-    _rawBody: body,
-    mainImage,
-    category,
-    stack,
-    live,
-    code,
-  } = project
+  const { title, _rawBody: body, category, stack, live, code } = project
   return (
     <Layout>
-      
       <ProjectArticle>
         <ProjectInfo>
           <div>
             <h1>{title}</h1>
-            <RichImage image={mainImage} />
           </div>
           <div>
             {category && category}
