@@ -7,6 +7,8 @@ import Layout from "../components/layout"
 import BlockContent from "../components/blockContent"
 import SEO from "../components/seo"
 
+import WaveyHeading from "../components/waveyheading"
+
 export const query = graphql`
   query ProjectQuery($slug: String!) {
     project: sanityProject(slug: { current: { eq: $slug } }) {
@@ -49,9 +51,6 @@ const ProjectInfo = styled.section`
   flex-direction: column;
   width: 100%;
   align-items: center;
-  div {
-    padding: 10px;
-  }
   h1 {
     text-transform: uppercase;
   }
@@ -136,7 +135,7 @@ const ProjectTemplate = ({ data }) => {
       <ProjectArticle>
         <ProjectInfo>
           <div>
-            <h1>{title}</h1>
+            <WaveyHeading text={title} />
           </div>
           <div>
             {category && category}

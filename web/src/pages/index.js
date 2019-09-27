@@ -7,7 +7,7 @@ import Blob from "../components/blob"
 
 const IndexPage = () => (
   <Layout>
-    <Blob fill="royalBlue"/>
+    <Blob fill="royalBlue" />
     <SEO title="Home" />
     <Link to="/projects/">Projects</Link>
   </Layout>
