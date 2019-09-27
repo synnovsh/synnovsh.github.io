@@ -21,10 +21,6 @@ const Slide = styled.li`
   transform: translate3d(-${props => props.index * 100}%, 0, 0);
   transition: transform 300ms;
   }
-
-  figure {
-    margin-top: 0 !important;
-  }
 `
 
 const Controls = styled.div`

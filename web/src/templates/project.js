@@ -51,6 +51,7 @@ const ProjectInfo = styled.section`
   flex-direction: column;
   width: 100%;
   align-items: center;
+
   h1 {
     text-transform: uppercase;
   }
@@ -70,7 +71,12 @@ const BodySection = styled.section`
 
 const Content = styled.div`
   grid-area: 1/2;
-  h1,
+
+  h1 {
+    margin: 1em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
   h2,
   p {
     margin-bottom: 1em;
@@ -78,7 +84,7 @@ const Content = styled.div`
 
   video,
   figure {
-    margin: 4em 0;
+    margin: 1.5em 0;
   }
 
   h2 {

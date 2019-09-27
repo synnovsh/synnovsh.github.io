@@ -9,7 +9,7 @@ const StyledWave = styled.div`
   background-position: 0 0;
   background-repeat: repeat-x;
   background-size: calc(3em + 1vw) calc(3em + 1vw);
-  animation: move 7s linear infinite;
+  animation: move 10s linear infinite;
   animation-play-state: running;
 
   @keyframes move {
@@ -17,7 +17,7 @@ const StyledWave = styled.div`
       background-position: 2px 1em;
     }
     to {
-      background-position: 500px 1em;
+      background-position: 400px 1em;
     }
   }
 `
