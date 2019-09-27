@@ -1,7 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 
-const AnimatedBlob = styled.div`
+const StyledBlobHeading = styled.div`
+  svg {
+    width: 50%;
+    height: 50%;
+  }
+`
+
+const AnimatedBlob = styled.svg`
   @keyframes from0to360 {
     from {
       transform: rotate(0);
@@ -15,7 +22,7 @@ const AnimatedBlob = styled.div`
     animation: from0to360 1s linear infinite;
     cx: 150;
     cy: 145;
-    r: 100;
+    r: 130;
     transform-origin: 145px 150px;
   }
 
@@ -32,7 +39,7 @@ const AnimatedBlob = styled.div`
     animation: from360to0 2s linear infinite;
     cx: 150;
     cy: 155;
-    r: 100;
+    r: 130;
     transform-origin: 155px 150px;
   }
 
@@ -40,7 +47,7 @@ const AnimatedBlob = styled.div`
     animation: from0to360 3s linear infinite;
     cx: 145;
     cy: 150;
-    r: 100;
+    r: 130;
     transform-origin: 150px 145px;
   }
 
@@ -48,17 +55,16 @@ const AnimatedBlob = styled.div`
     animation: from360to0 2.5s linear infinite;
     cx: 155;
     cy: 150;
-    r: 100;
+    r: 130;
     transform-origin: 150px 155px;
   }
 `
 
 const Blob = ({ fill }) => {
   return (
-    <AnimatedBlob>
-      <svg
-        width="300"
-        height="300"
+    <StyledBlobHeading>
+      <AnimatedBlob
+        viewBox="0 0 300 300"
         xmlns="http://www.w3.org/2000/svg"
         filter="url(#goo)"
         fill={fill && `${fill}`}
@@ -84,8 +90,8 @@ const Blob = ({ fill }) => {
         <circle id="Circle2" />
         <circle id="Circle3" />
         <circle id="Circle4" />
-      </svg>
-    </AnimatedBlob>
+      </AnimatedBlob>
+    </StyledBlobHeading>
   )
 }
 
