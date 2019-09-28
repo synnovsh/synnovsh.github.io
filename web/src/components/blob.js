@@ -61,10 +61,8 @@ const Blob = ({ fill, text }) => {
   const r = 130
   const basecx = 150
   const basecy = 150
-  const offset = 5
-  const randOffset = () => Math.floor(-1 + Math.random() * 3) * offset
-  console.log(randOffset())
-  console.log(randOffset())
+  const max = 5
+  const randOffset = () => 10 + Math.floor(Math.random() * Math.floor(max))
   return (
     <StyledBlobHeading>
       <h1>{text}</h1>
