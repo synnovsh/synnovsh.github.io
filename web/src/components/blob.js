@@ -27,14 +27,6 @@ const AnimatedBlob = styled.svg`
     }
   }
 
-  #Circle1 {
-    animation: from0to360 1s linear infinite;
-    cx: 150;
-    cy: 145;
-    r: 130;
-    transform-origin: 145px 150px;
-  }
-
   @keyframes from360to0 {
     from {
       transform: rotate(360deg);
@@ -44,32 +36,35 @@ const AnimatedBlob = styled.svg`
     }
   }
 
-  #Circle2 {
+  #circle1 {
+    animation: from0to360 1s linear infinite;
+  }
+
+  #circle2 {
     animation: from360to0 2s linear infinite;
-    cx: 150;
-    cy: 155;
-    r: 130;
-    transform-origin: 155px 150px;
   }
 
-  #Circle3 {
+  #circle3 {
     animation: from0to360 3s linear infinite;
-    cx: 145;
-    cy: 150;
-    r: 130;
-    transform-origin: 150px 145px;
   }
 
-  #Circle4 {
+  #circle4 {
     animation: from360to0 2.5s linear infinite;
-    cx: 155;
-    cy: 150;
-    r: 130;
-    transform-origin: 150px 155px;
   }
 `
 
+const Circle = styled.circle`
+  transform-origin: ${props => props.cy}px ${props => props.cx}px;
+`
+
 const Blob = ({ fill, text }) => {
+  const r = 130
+  const basecx = 150
+  const basecy = 150
+  const offset = 5
+  const randOffset = () => Math.floor(-1 + Math.random() * 3) * offset
+  console.log(randOffset())
+  console.log(randOffset())
   return (
     <StyledBlobHeading>
       <h1>{text}</h1>
@@ -96,10 +91,30 @@ const Blob = ({ fill, text }) => {
             <feComposite in="SourceGraphic" in2="goo" operator="atop" />
           </filter>
         </defs>
-        <circle id="Circle1" />
-        <circle id="Circle2" />
-        <circle id="Circle3" />
-        <circle id="Circle4" />
+        <Circle
+          id="circle"
+          r={r}
+          cx={basecx + randOffset()}
+          cy={basecy + randOffset()}
+        />
+        <Circle
+          id="circle2"
+          r={r}
+          cx={basecx + randOffset()}
+          cy={basecy + randOffset()}
+        />
+        <Circle
+          id="circle3"
+          r={r}
+          cx={basecx + randOffset()}
+          cy={basecy + randOffset()}
+        />
+        <Circle
+          id="circle4"
+          r={r}
+          cx={basecx + randOffset()}
+          cy={basecy + randOffset()}
+        />
       </AnimatedBlob>
     </StyledBlobHeading>
   )

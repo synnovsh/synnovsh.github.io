@@ -18,7 +18,7 @@ const IndexPage = () => (
         <Blob fill="royalBlue" text="Projects" />
       </Link>
       <Link to="/projects/">
-        <Blob fill="royalBlue" text="Art" />
+        <Blob fill="red" text="Art" />
       </Link>
     </Blobs>
     <SEO title="Home" />
