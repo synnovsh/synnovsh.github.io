@@ -62,7 +62,9 @@ const Blob = ({ fill, text }) => {
   const basecx = 150
   const basecy = 150
   const max = 5
-  const randOffset = () => 10 + Math.floor(Math.random() * Math.floor(max))
+  const randDirection = () => Math.round(Math.random()) * 2 - 1
+  const randOffset = () =>
+    Math.floor(Math.random() * Math.floor(max)) * randDirection()
   return (
     <StyledBlobHeading>
       <h1>{text}</h1>
@@ -89,8 +91,10 @@ const Blob = ({ fill, text }) => {
             <feComposite in="SourceGraphic" in2="goo" operator="atop" />
           </filter>
         </defs>
+        <Circle r={r} cx={basecx} cy={basecy} />
+
         <Circle
-          id="circle"
+          id="circle1"
           r={r}
           cx={basecx + randOffset()}
           cy={basecy + randOffset()}
