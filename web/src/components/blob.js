@@ -2,9 +2,18 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledBlobHeading = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    position: absolute;
+    text-decoration: underline;
+    z-index: 1;
+  }
   svg {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: auto;
   }
 `
 
@@ -60,9 +69,10 @@ const AnimatedBlob = styled.svg`
   }
 `
 
-const Blob = ({ fill }) => {
+const Blob = ({ fill, text }) => {
   return (
     <StyledBlobHeading>
+      <h1>{text}</h1>
       <AnimatedBlob
         viewBox="0 0 300 300"
         xmlns="http://www.w3.org/2000/svg"

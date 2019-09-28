@@ -4,20 +4,20 @@ import wave from "../icons/wave.svg"
 
 const StyledWave = styled.div`
   display: inline-block;
-  padding-bottom: calc(3em + 1vw) !important;
+  padding-bottom: calc(2em + 1vw) !important;
   background: url(${wave});
   background-position: 0 0;
   background-repeat: repeat-x;
-  background-size: calc(3em + 1vw) calc(3em + 1vw);
+  background-size: calc(2em + 1vw) calc(2em + 1vw);
   animation: move 10s linear infinite;
   animation-play-state: running;
 
   @keyframes move {
     from {
-      background-position: 2px 1em;
+      background-position: 0px calc(1em + 1vw);
     }
     to {
-      background-position: 400px 1em;
+      background-position: 300px calc(1em + 1vw);
     }
   }
 `
