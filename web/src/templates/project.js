@@ -73,18 +73,28 @@ const Content = styled.div`
   grid-area: 1/2;
 
   h1 {
-    margin: 1em 0;
+    margin: calc(1em + 1vw) 0 calc(0.5em + 1vw) 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
 
   h2,
   p {
-    margin-bottom: 1em;
+    margin-bottom: calc(1em + 1vw);
   }
 
   video,
   figure {
-    margin: 1.5em 0;
+    margin: calc(1em + 1vw) 0 calc(2em + 1vw) 0;
+  }
+
+  .slideshow {
+    margin: calc(1em + 1vw) 0 calc(2em + 1vw) 0;
+    figure {
+      margin: 0 !important;
+      figcaption {
+        margin: 1em 0;
+      }
+    }
   }
 
   h2 {

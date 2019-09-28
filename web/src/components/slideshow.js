@@ -6,7 +6,6 @@ import RichImage from "./richImage"
 const Slideshower = styled.div`
   position: relative;
   max-width: 100%;
-  max-height: 100vh;
   overflow: hidden;
 `
 
@@ -17,6 +16,7 @@ const Slidelist = styled.ul`
 `
 
 const Slide = styled.li`
+  max-height: 100vh;
   width: 100%;
   transform: translate3d(-${props => props.index * 100}%, 0, 0);
   transition: transform 300ms;
@@ -24,20 +24,19 @@ const Slide = styled.li`
 `
 
 const Controls = styled.div`
+  margin-top: 1em;
   width: 100%;
-  position: absolute;
-  top: 50%;
-  z-index: 666;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
 `
 
 const Button = styled.button`
   ${props => props.disabled && "visibility: hidden;"}
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.4);
-  border: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
   outline: 0;
   padding: 0;
 
@@ -48,17 +47,15 @@ const Button = styled.button`
 
 const Arrow = ({ direction }) => (
   <svg
-    height="32px"
     id="Layer_1"
-    version="1.1"
-    viewBox="0 0 32 32"
-    width="32px"
-    transform={direction === "left" && "rotate(-180)"}
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 57.49 22.14"
+    width="50%"
+    transform={direction === "left" ? "rotate(-180)" : ""}
   >
-    <path
-      d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z"
-      fill="black"
-    />
+    <title>ssh arrow</title>
+    <path d="M47.2.33A1.12,1.12,0,0,0,45.62,1.9l8,8H1.11A1.11,1.11,0,0,0,0,11.06a1.12,1.12,0,0,0,1.11,1.13H53.67l-8,8a1.14,1.14,0,0,0,0,1.59,1.11,1.11,0,0,0,1.59,0l10-10a1.09,1.09,0,0,0,0-1.57Z" />
   </svg>
 )
 
@@ -82,19 +79,7 @@ const Slideshow = ({ slides }) => {
   }
 
   return (
-    <Slideshower>
-      <Controls>
-        <ArrowButton
-          direction="left"
-          onClick={() => handlePrev()}
-          disabled={index === 0}
-        />
-        <ArrowButton
-          direction="right"
-          onClick={handleNext}
-          disabled={index === len - 1}
-        />
-      </Controls>
+    <Slideshower className="slideshow">
       <Slidelist length={len}>
         {slides.map(slide => (
           <Slide length={len} index={index} key={slide._key}>
@@ -102,6 +87,19 @@ const Slideshow = ({ slides }) => {
           </Slide>
         ))}
       </Slidelist>
+      <Controls>
+        <ArrowButton
+          direction="left"
+          onClick={() => handlePrev()}
+          disabled={index === 0}
+        />
+        <span>{`${index + 1}/${len}`}</span>
+        <ArrowButton
+          direction="right"
+          onClick={handleNext}
+          disabled={index === len - 1}
+        />
+      </Controls>
     </Slideshower>
   )
 }

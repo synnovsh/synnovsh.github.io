@@ -5,18 +5,22 @@ import sanityConfig from "../../../studio/sanity.json"
 
 const builder = imageUrlBuilder(sanityConfig.api)
 
-export function imageUrlFor(source) {
-  return builder.image(source)
+export function imageUrlFor(source, maxWidth) {
+  const base = builder.image(source)
+  if (maxWidth) {
+    return base.width(maxWidth).url()
+  }
+  return base.width(1000).url()
 }
 
-const RichImage = ({ image }) => {
+const RichImage = ({ image, maxWidth }) => {
   const {
     alt,
     asset: { id },
     caption,
   } = image
 
-  const url = imageUrlFor(id)
+  const url = imageUrlFor(id, maxWidth)
 
   return (
     <figure>
