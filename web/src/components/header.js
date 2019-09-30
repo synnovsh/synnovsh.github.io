@@ -7,6 +7,12 @@ const Head = styled.header``
 const Nav = styled.nav`
   position: fixed;
   height: 50px;
+  width: 100vw;
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 `
 
 const blink = keyframes`
@@ -43,12 +49,22 @@ const Logo = styled.div`
 const Header = () => (
   <Head>
     <Nav>
-      <Link to="/">
-        <Logo>
-          <span>{`$ `}</span>
-          <div className="typewrite">ssh</div>
-        </Logo>
-      </Link>
+      <ul>
+        <li>
+          <Link to="/">
+            <Logo>
+              <span>{`$ `}</span>
+              <div className="typewrite">ssh</div>
+            </Logo>
+          </Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/projects">Projects</Link>
+        </li>
+      </ul>
     </Nav>
   </Head>
 )
