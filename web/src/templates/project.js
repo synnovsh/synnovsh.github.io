@@ -72,28 +72,25 @@ const BodySection = styled.section`
 const Content = styled.div`
   grid-area: 1/2;
 
-  h1 {
-    margin: calc(1em + 1vw) 0 calc(0.5em + 1vw) 0;
+  h1,
+  h2 {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    margin: 1em 0;
   }
 
-  h2,
   p {
-    margin-bottom: calc(1em + 1vw);
+    margin-bottom: 1.5em;
   }
 
   video,
   figure {
-    margin: calc(1em + 1vw) 0 calc(2em + 1vw) 0;
+    margin: 1.5em 0 3em 0;
   }
 
   .slideshow {
-    margin: calc(1em + 1vw) 0 calc(2em + 1vw) 0;
+    margin-bottom: 3em;
     figure {
-      margin: 0 !important;
-      figcaption {
-        margin: 1em 0;
-      }
+      margin: 1.5em 0 0 0 !important;
     }
   }
 

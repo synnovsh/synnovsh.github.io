@@ -6,6 +6,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Main = styled.div`
+  display: flex;
+  height: 50vh;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
   p {
     font-size: calc(1em + 1vw);
   }

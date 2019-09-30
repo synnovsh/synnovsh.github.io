@@ -12,7 +12,12 @@ import "./typography.css"
 import Header from "./header"
 
 const Content = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   main {
+    flex: 1;
+    padding-top: 100px;
     img {
       max-width: 100%;
     }
