@@ -11,6 +11,9 @@ import "./typography.css"
 
 import Header from "./header"
 
+const Gutter = styled.div`
+`
+
 const Content = styled.div`
   display: flex;
   min-height: 100vh;
@@ -36,13 +39,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Gutter>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Content>
         <main>{children}</main>
       </Content>
       <footer>{`© ${new Date().getFullYear()}`}</footer>
-    </>
+    </Gutter>
   )
 }
 
