@@ -43,8 +43,8 @@ const maxWidth = 1000
 
 const List = styled.div`
   display: grid;
-  grid-template-columns: minmax(50px, auto) minmax(0, ${maxWidth}px) minmax(
-      50px,
+  grid-template-columns: minmax(0px, auto) minmax(0, ${maxWidth}px) minmax(
+      0px,
       auto
     );
 

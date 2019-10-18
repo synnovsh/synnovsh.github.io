@@ -11,15 +11,26 @@ import "./typography.css"
 
 import Header from "./header"
 
-const Gutter = styled.div`
+const StyledLayout = styled.div`
+  display: grid;
+  grid-template-columns: 25px 1fr 25px;
+  grid-template-rows: auto 1fr auto;
+
+  header {
+    grid-area: 1/2;
+  }
+
+  footer {
+    grid-area: 3/2;
+  }
 `
 
 const Content = styled.div`
+  grid-area: 2/2;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   main {
-    flex: 1;
     padding-top: 100px;
     img {
       max-width: 100%;
@@ -39,13 +50,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <Gutter>
+    <StyledLayout>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Content>
         <main>{children}</main>
       </Content>
       <footer>{`© ${new Date().getFullYear()}`}</footer>
-    </Gutter>
+    </StyledLayout>
   )
 }
 
