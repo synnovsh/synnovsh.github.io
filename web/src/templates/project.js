@@ -104,6 +104,21 @@ const Content = styled.div`
     color: inherit;
   }
 
+  ul {
+    list-style-type: disc;
+    margin-left: 1em;
+    line-height: 1.8em;
+  
+    @media screen and (min-width: 800px) {
+        font-size: 1.2em;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        font-size: 1.3em;
+    }
+  }
+  
+
   video,
   img {
     max-height: 80vh;
