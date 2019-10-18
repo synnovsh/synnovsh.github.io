@@ -3,15 +3,15 @@ import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 
 const Head = styled.header`
-position: fixed;
-width: 100%;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-z-index: 10;
-background-color: rgba(255,255,255, 0.9);
-border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background-color: rgba(255,255,255, 0.9);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 
 
   a {

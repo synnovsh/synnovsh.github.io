@@ -56,7 +56,6 @@ const List = styled.div`
 `
 
 const illustrations = ({ data }) => {
-    console.log(data)
     const illustrationNodes = mapEdgesToNodes(data.illustrations)
     return (
         <Layout>

@@ -67,7 +67,6 @@ const Layout = ({ children }) => {
       <Content>
         <main>{children}</main>
       </Content>
-      <footer>{`© ${new Date().getFullYear()}`}</footer>
     </StyledLayout>
   )
 }

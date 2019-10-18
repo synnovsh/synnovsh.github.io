@@ -16,19 +16,27 @@ const Main = styled.div`
   }
 `
 
-const IndexPage = () => (
+const IndexPage = () => {
+  console.log(`
+  　　　∧_∧
+  　　 (　･ω･)　Enjoy looking! 
+  　 ＿|　⊃ (＿＿_
+`)
+  return (
   <Layout>
     <Main>
       <h1>Hello world.</h1>
-      <p>This site is currently under construction.</p>
+      <p>I'm <Link to="/about/">Synnøve S. Halle</Link></p>
       <p>
-        {`You can check out my `}
-        <Link to="/projects/">Projects</Link>
-        {` while you're here.`}
+        {`I write  `}
+        <Link to="/projects/">code and design things</Link>
+        {` and `}
+        <Link to="/illustrations/">draw</Link>
+        {` a little too.`}
       </p>
     </Main>
     <SEO title="Synnøve S. Halle" />
   </Layout>
-)
+)}
 
 export default IndexPage
