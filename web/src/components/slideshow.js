@@ -7,12 +7,17 @@ const Slideshower = styled.div`
   position: relative;
   max-width: 100%;
   overflow: hidden;
+  span {
+    color: rgba(0, 0, 0, 0.3);
+  }
 `
 
 const Slidelist = styled.ul`
   width: ${props => props.length * 100}%;
   display: flex;
   flex-direction: row;
+  list-style: none !important;
+  margin-left: 0 !important;
 `
 
 const Slide = styled.li`
@@ -27,7 +32,7 @@ const Controls = styled.div`
   margin-top: 1em;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
 `
 
@@ -35,8 +40,8 @@ const Button = styled.button`
   ${props => props.disabled && "visibility: hidden;"}
   width: 50px;
   height: 50px;
-  background: rgba(0, 0, 0, 0.9);
   outline: 0;
+  border: none;
   padding: 0;
 
    {
@@ -44,25 +49,10 @@ const Button = styled.button`
   }
 `
 
-const Arrow = ({ direction }) => (
-  <svg
-    id="Layer_1"
-    data-name="Layer 1"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 57.49 22.14"
-    width="50%"
-    fill="white"
-    transform={direction === "left" ? "rotate(-180)" : ""}
-  >
-    <title>ssh arrow</title>
-    <path d="M47.2.33A1.12,1.12,0,0,0,45.62,1.9l8,8H1.11A1.11,1.11,0,0,0,0,11.06a1.12,1.12,0,0,0,1.11,1.13H53.67l-8,8a1.14,1.14,0,0,0,0,1.59,1.11,1.11,0,0,0,1.59,0l10-10a1.09,1.09,0,0,0,0-1.57Z" />
-  </svg>
-)
-
 const ArrowButton = ({ direction, onClick, disabled }) => {
   return (
     <Button type="button" onClick={() => onClick()} disabled={disabled}>
-      <Arrow direction={direction} />
+      <span>{direction==="left" ? '←' : '→'}</span>
     </Button>
   )
 }

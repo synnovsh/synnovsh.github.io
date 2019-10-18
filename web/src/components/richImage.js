@@ -25,7 +25,6 @@ const RichImage = ({ image, maxWidth }) => {
   return (
     <figure>
       <img alt={alt} src={url} />
-      {caption && <figcaption>{caption}</figcaption>}
     </figure>
   )
 }

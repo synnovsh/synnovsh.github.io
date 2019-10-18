@@ -50,7 +50,7 @@ const List = styled.div`
     margin: 0;
     list-style-type: none;
     li {
-        margin: 20px 0;
+        margin: 10vh 0;
     }
   }
 `

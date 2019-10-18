@@ -25,6 +25,10 @@ const StyledLayout = styled.div`
   }
 `
 
+const Footer = styled.footer`
+  height: 100px;
+`
+
 const Content = styled.div`
   grid-area: 2/2;
   display: flex;
@@ -67,6 +71,8 @@ const Layout = ({ children }) => {
       <Content>
         <main>{children}</main>
       </Content>
+      <Footer>
+      </Footer>
     </StyledLayout>
   )
 }
