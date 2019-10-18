@@ -17,8 +17,16 @@ export const query = graphql`
   }
 `
 
+const Content = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0px, auto) 500px minmax(0px, auto);
+  @media screen and (min-width: 800px) {
+    grid-template-columns: minmax(0px, 200px) 500px;
+  }
+`
+
 const Body = styled.article`
-  max-width: 500px;
+  grid-area: 1/2;
   h1 {
     margin-bottom: .5em;
   }
@@ -43,10 +51,12 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} />
+      <Content>
       <Body>
         <h1>{title}</h1>
         {body && <BlockContent blocks={body} />}
       </Body>
+      </Content>
     </Layout>
   )
 }
