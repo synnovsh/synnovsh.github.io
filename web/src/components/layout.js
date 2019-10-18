@@ -49,7 +49,7 @@ const Content = styled.div`
     color: inherit;
     border-bottom: 2px solid #FFAC00;
     &:hover {
-      opacity: 0.9;
+      opacity: 0.8;
     }
   }
 `

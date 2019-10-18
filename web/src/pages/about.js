@@ -19,9 +19,12 @@ export const query = graphql`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: minmax(0px, auto) 500px minmax(0px, auto);
-  @media screen and (min-width: 800px) {
-    grid-template-columns: minmax(0px, 200px) 500px;
+  grid-template-columns: minmax(0px, auto) auto minmax(0px, auto);
+  @media screen and (min-width: 500px) {
+    grid-template-columns: minmax(0px, auto) 400px minmax(0px, auto);
+  }
+  @media screen and (min-width: 700px) {
+    grid-template-columns: minmax(0px, 100px) 500px;
   }
 `
 

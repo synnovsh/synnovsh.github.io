@@ -60,6 +60,7 @@ const illustrations = ({ data }) => {
     return (
         <Layout>
             <SEO title="illustrations" />
+            <h1>Editorial illustrations</h1>
             <List>
                 <ul>
                     {illustrationNodes.map(illustration => (
