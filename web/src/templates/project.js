@@ -35,10 +35,8 @@ const maxWidth = 800
 
 const ProjectArticle = styled.article`
   display: grid;
-  grid-template-columns: minmax(25px, auto) minmax(0, ${maxWidth}px) minmax(
-      25px,
-      auto
-    );
+  grid-template-columns: minmax(0, auto) minmax(0, ${maxWidth}px) minmax(
+      0, auto);
   grid-template-rows: auto;
   width: 100%;
 `
@@ -61,8 +59,8 @@ const BodySection = styled.section`
   grid-row: 2/3;
   grid-column: 1/4;
   display: grid;
-  grid-template-columns: minmax(25px, auto) minmax(0, ${maxWidth}px) minmax(
-      25px,
+  grid-template-columns: minmax(0px, auto) minmax(0, ${maxWidth}px) minmax(
+      0px,
       auto
     );
   width: 100%;
@@ -74,7 +72,6 @@ const Content = styled.div`
 
   h1,
   h2 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     margin: 1em 0;
   }
 

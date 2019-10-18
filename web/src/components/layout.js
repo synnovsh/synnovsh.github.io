@@ -31,9 +31,21 @@ const Content = styled.div`
   min-height: 100vh;
   flex-direction: column;
   main {
-    padding-top: 100px;
+    padding-top: 150px;
     img {
       max-width: 100%;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  p > a {
+    color: inherit;
+    border-bottom: 2px solid #FFAC00;
+    &:hover {
+      opacity: 0.9;
     }
   }
 `

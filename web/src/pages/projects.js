@@ -104,10 +104,6 @@ const Info = styled.div`
     border-bottom: 1px solid rgba(225, 225, 255, 0.9);
   }
 
-  a {
-    text-decoration: none;
-  }
-
   h1 {
     text-transform: uppercase;
   }

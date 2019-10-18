@@ -83,17 +83,22 @@ const Nav = styled.nav`
   transition: opacity 0.5s, visibility 0.5s;
 `
 
-const NavItems = styled.ul`
-  margin: 10%;
+const NavItems = styled.ul` 
   display: flex;
   flex-direction: column;
+  margin-top: 20vh;
+  margin-right: 25px;
   
   li {
     margin-left: auto;
+    margin-top: .5em;
     font-size: calc(1.8em + 1vw);
     a {
       text-align: right;
       color: inherit;
+      &:hover {
+        border-bottom: 2px solid #FFAC00;
+      }
     }
   }
 `
@@ -142,7 +147,7 @@ const Header = () => {
       <Nav show={show}>
         <NavItems>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">About Me</Link>
           </li>
           <li>
             <Link to="/projects">Projects</Link>
