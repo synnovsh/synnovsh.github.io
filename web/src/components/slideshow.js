@@ -35,8 +35,7 @@ const Button = styled.button`
   ${props => props.disabled && "visibility: hidden;"}
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   outline: 0;
   padding: 0;
 
@@ -52,6 +51,7 @@ const Arrow = ({ direction }) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 57.49 22.14"
     width="50%"
+    fill="white"
     transform={direction === "left" ? "rotate(-180)" : ""}
   >
     <title>ssh arrow</title>
